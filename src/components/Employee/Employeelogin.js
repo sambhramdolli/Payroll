@@ -10,7 +10,7 @@ const LoginPage = () => {
 
   const handleLoginSuccess = (response) => {
     console.log('Login Success:', response);
-    navigate('/Employee/Employee.js'); 
+    navigate('/employee'); 
   };
 
   const handleLoginFailure = (response) => {

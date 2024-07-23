@@ -2,15 +2,19 @@ import React, { useState } from 'react';
 import './Employee.css';
 import NavBar from '../Navbar.js';
 import SideBar1 from './Employeesidebar.js';
-import ApplyLeave from './LeaveForm.js'; 
-import SalaryReport from '../SalaryReport.js'; 
-import LeaveRequests from '../LeaveRequests.js'; 
+import ApplyLeave from './LeaveApplication.js';
+import SalaryReport from '../SalaryReport.js';
 
-const Admin = () => {
+const Employee = () => {
   const [selectedComponent, setSelectedComponent] = useState(null);
 
-  const handleButtonClick = (componentName) => {
-    setSelectedComponent(componentName);
+  const handleButtonClick = (action) => {
+    // Toggle the state
+    if (selectedComponent === action) {
+      setSelectedComponent(null);
+    } else {
+      setSelectedComponent(action);
+    }
   };
 
   return (
@@ -19,14 +23,13 @@ const Admin = () => {
       <div className="home-page">
         <SideBar1 onButtonClick={handleButtonClick} />
         <div className="content">
-          {selectedComponent === 'applyLeave' && <ApplyLeave />}
-          {selectedComponent === 'viewEmployeeDetails' && <div/>}
-          {selectedComponent === 'viewLeaveRequest' && <LeaveRequests/>}
-          {selectedComponent === 'salaryReports' && <SalaryReport/>}
+          {selectedComponent === 'Apply Leave' && <ApplyLeave />}
+          {selectedComponent === 'salaryReports' && <SalaryReport />}
         </div>
       </div>
     </main>
   );
 };
 
-export default Admin;
+export default Employee;
+

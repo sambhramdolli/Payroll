@@ -24,8 +24,8 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/admin.js" element={<AdminPage />} /> 
-            <Route path="/components/Employee/Employeelogin.js" element={<EmployeeLoginPage />} />
-            <Route path="/components/Employee/Employee.js" element={<EmployeePage />} />
+            <Route path="/employee-login" element={<EmployeeLoginPage />} />
+            <Route path="/employee" element={<EmployeePage />} />
           </Routes>
         </div>
       </Router>
